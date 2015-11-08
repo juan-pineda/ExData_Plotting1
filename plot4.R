@@ -5,6 +5,12 @@
 # File has to be in the same folder
 ##-------------------------------##
 
+# Download dataset
+url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download(url, dest="dataset.zip", mode="wb")
+# unzip the file
+unzip("dataset.zip", exdir = "./")
+
 # read full dataset
 table <- read.table("household_power_consumption.txt",header=TRUE, sep=";", na.strings="?")
 # keep only data from 1st and 2nd of february, 2007
